@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import Weather from './components/weather';
 
-import App from './components/app';
-import reducers from './reducers';
+class App extends Component {
+  
+  constructor(props){
+  	super(props);
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+  	this.state = { lat : '' ,
+  					lon : ''
+    			};
+  }
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+  componentDidMount()
+  {
+  	if(navigator.geolocation){
+  		navigator.geolocation.getCurrentPosition((position) => this.setState({ lon : position.coords.longitude, lat :position.coords.latitude }));
+  	}
+    document.body.style.backgroundColor = "#fffde7";
+
+  }
+
+
+  render() {
+    return (
+    	<div className="wholemargin">
+    		<div className='card-panel large deep-purple darken-3'>
+    			<Weather lat = {this.state.lat} lon = {this.state.lon} />
+    		</div>
+    	</div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector('.container'));

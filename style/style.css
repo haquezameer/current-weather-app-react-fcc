@@ -1,0 +1,39 @@
+.wholemargin{
+	margin-top: 10%;
+	margin-bottom: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+span.card-title.text-white{
+	font-size: 3em;
+	text-decoration-color: white;
+}
+
+div > span.card-content{
+	text-transform: capitalize;
+	font-size: 2em;
+}
+
+
+
+.btn-floating.btn-large{
+	color : white;
+	background-color: #6200ea;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border: none;
+}
+.btn-floating.btn-large:focus{
+	outline: none;
+}
+
+.title-enter{
+	right: 100px;
+}
+
+.title-enter.title-enter-active{
+	right: 0px;
+	transition: 500ms ease-in;
+}

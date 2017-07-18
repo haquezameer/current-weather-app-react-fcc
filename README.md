@@ -1,0 +1,1 @@
+**Weather app** built using **React**. The project also involves the use of **Materialize css** for styling and [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter) for bootstrapping.
